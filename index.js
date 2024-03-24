@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 const answer = await inquirer.prompt([
     {
@@ -14,7 +15,7 @@ const answer = await inquirer.prompt([
         message: "Select one of the operators to perform action",
         name: "operator",
         type: "list",
-        choices: ["Addition", "Subtraction", "Multiplication", "Division"]
+        choices: ["Addition", "Subtraction", "Multiplication", "Division", "Exponentiation"]
     }
 ]);
 // conditional Statement
@@ -29,6 +30,9 @@ else if (answer.operator === "Multiplication") {
 }
 else if (answer.operator === "Division") {
     console.log(answer.firstNumber / answer.secondNumber);
+}
+else if (answer.operator === "Exponentiation") {
+    console.log(answer.firstNumber ** answer.secondNumber);
 }
 else {
     console.log("Pleae select a valid operator");
